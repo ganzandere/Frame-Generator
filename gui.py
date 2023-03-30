@@ -22,10 +22,10 @@ class App(ctk.CTk):
         self.grid_rowconfigure(4, weight=1)
         self.grid_columnconfigure(0, weight=1)
         
-        self.doc =  ''' The steps slider determines the number of "waves" of numbers to be returned. Each "wave" corresponds to a different interval of numbers in the original sequence.
-        For example, if steps is 1, the function will return the first "wave" of numbers, which consists of every 60th number in the sequence.
-        If steps is 2, the function will return the first "wave" of numbers (every 60th number), followed by the second "wave" of numbers (every 30th number). In each successive wave the interval will be roughly divided in half (60, 30, 15, 8, 4, 2, 1).
-        If the infill frames checkbox is on, the last wave will be followed by all the remaining numbers in the sequence.'''
+        self.doc =  ''' The Base slider defines initial frame skip step when constructing a sequence. 
+        The Steps slider defines a number of times that the base step get's divided in half
+        and creates a new sequence that gets appended to the first one but without repeating already existing frames. 
+        If the infill frames checkbox is on, the last sequence will be followed by all the remaining numbers in the range.'''
 
         self.top_frame = ctk.CTkFrame(master=self)
         self.top_frame.grid(row=0, column=0, padx=20, pady=10, sticky="nsew")

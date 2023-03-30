@@ -1,5 +1,6 @@
 import customtkinter as ctk
 import pyperclip
+import os
 
 import constants as c
 from generator import frame_generator
@@ -15,7 +16,7 @@ class App(ctk.CTk):
         self.title("DK Frame Generator")
         self.minsize(c.WIN_W, c.WIN_H)
         self.maxsize(c.WIN_W, c.WIN_H)
-        self.iconbitmap("icons/dk.ico")
+        self.iconbitmap(f"{os.path.dirname(__file__)}/icons/dk.ico")
         self.font = ctk.CTkFont(c.FONT[0], c.FONT[1], c.FONT[2])
 
         self.grid_rowconfigure(0, weight=0)

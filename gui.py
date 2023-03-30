@@ -108,7 +108,4 @@ class App(ctk.CTk):
             self.textbox.insert("0.0", formatted_list)
         else:
             self.textbox.insert("0.0", "Please enter a value for both Start and End frame.")
-
-if __name__ == "__main__":
-    app = App()
-    app.mainloop()
+            

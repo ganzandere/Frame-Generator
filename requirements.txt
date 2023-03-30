@@ -1,2 +1,2 @@
-import customtkinter as ctk
-import pyperclip
+customtkinter==5.1.2
+pyperclip==1.8.2

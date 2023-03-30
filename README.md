@@ -1,0 +1,1 @@
+Cute and simple though not incredibly useful Python GUI app based on customtkinter. Made for submitting more advanced frame patterns to render farm in Thinkbox Deadline format, before we found out Deadline already has built-in formatting methods that cover those cases. `deadline_format()` inside generator.py could still be useful for other apps that involve frame list parsing.  

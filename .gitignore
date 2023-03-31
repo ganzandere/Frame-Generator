@@ -3,3 +3,5 @@ output/
 
 #ignore __pycache__ folder
 __pycache__/
+
+.vscode

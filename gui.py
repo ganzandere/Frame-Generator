@@ -33,7 +33,7 @@ class App(ctk.CTk):
         self.top_frame.grid(row=0, column=0, padx=20, pady=10, sticky="nsew")
 
         self.top_frame.grid_rowconfigure(0, weight=1)
-        self.top_frame.grid_columnconfigure((0, 1), weight=1)
+        self.top_frame.grid_columnconfigure((0, 1), weight=1) # type: ignore
 
         self.sframe_label = ctk.CTkLabel(master=self.top_frame, text="Start Frame", font=self.font)
         self.sframe_label.grid(row=0, column=0, padx=10, pady=5)

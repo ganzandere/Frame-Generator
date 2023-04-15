@@ -1,6 +1,7 @@
+import os
+
 import customtkinter as ctk
 import pyperclip
-import os
 
 import constants as c
 from generator import frame_generator
@@ -22,10 +23,10 @@ class App(ctk.CTk):
         self.grid_rowconfigure(0, weight=0)
         self.grid_rowconfigure(4, weight=1)
         self.grid_columnconfigure(0, weight=1)
-        
-        self.doc =  ''' The Base slider defines initial frame skip step when constructing a sequence. 
+
+        self.doc =  ''' The Base slider defines initial frame skip step when constructing a sequence.
         The Steps slider defines a number of times that the base step get's divided in half
-        and creates a new sequence that gets appended to the first one but without repeating already existing frames. 
+        and creates a new sequence that gets appended to the first one but without repeating already existing frames.
         If the infill frames checkbox is on, the last sequence will be followed by all the remaining numbers in the range.'''
 
         self.top_frame = ctk.CTkFrame(master=self)
@@ -59,7 +60,7 @@ class App(ctk.CTk):
         self.base_slider.set(self.base_init)
         self.base_label.grid(row=0, column=0, padx=20, pady=5)
         self.base_slider.grid(row=1, column=0, padx=20, pady=10)
-        
+
         self.step_init = 2
         self.step_val = ctk.IntVar()
         self.step_label = ctk.CTkLabel(master=self.mid_frame, text=str(self.step_init) + " Steps", font=self.font)
@@ -93,7 +94,7 @@ class App(ctk.CTk):
         self.base_label.configure(text=f"Base {str(c.BASE_VALUES[int(val)])}")
 
     def step_slider_callback(self, val):
-        """Defines a step slider."""     
+        """Defines a step slider."""
         if val == 1:
             self.step_label.configure(text=str(int(val)) + " Step")
         else:
@@ -104,8 +105,7 @@ class App(ctk.CTk):
         self.textbox.delete("0.0", "end")
         if self.sframe_entry.get() != "" and self.endframe_entry.get() != "":
             formatted_list = frame_generator(int(self.sframe_entry.get()),int(self.endframe_entry.get()),c.BASE_VALUES[int(self.base_val.get())],int(self.step_val.get()),self.infill_val.get(),self.reverse_val.get())
-            pyperclip.copy(formatted_list)    
+            pyperclip.copy(formatted_list)
             self.textbox.insert("0.0", formatted_list)
         else:
             self.textbox.insert("0.0", "Please enter a value for both Start and End frame.")
-            

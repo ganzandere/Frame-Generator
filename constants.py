@@ -1,3 +1,4 @@
+"""Defined constants."""
 WIN_W = 300
 WIN_H = 700
 
